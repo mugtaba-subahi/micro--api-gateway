@@ -1,0 +1,34 @@
+service: api-gateway
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  region: eu-west-1
+  stage: dev
+  versionFunctions: false
+  deploymentBucket: zadif-sls-deployments
+
+plugins:
+  - serverless-offline
+  - serverless-domain-manager
+
+functions:
+  graphql:
+    handler: lambda.graphql
+    events:
+      - http:
+          path: /
+          method: post
+          cors: true
+          private: false
+      - http:
+          path: /
+          method: get
+          cors: true
+          private: false
+
+custom:
+  customDomain:
+    domainName: api.zadif.com
+    basePath: gateway
+    stage: dev
