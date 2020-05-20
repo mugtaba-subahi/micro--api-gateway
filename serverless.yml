@@ -9,26 +9,26 @@ provider:
   deploymentBucket: zadif-sls-deployments
 
 plugins:
-  - serverless-offline
+  # - serverless-offline
   - serverless-domain-manager
 
 functions:
   graphql:
     handler: lambda.graphql
+    cors: true
+    private: false
     events:
       - http:
           path: /
           method: post
           cors: true
-          private: false
       - http:
           path: /
           method: get
           cors: true
-          private: false
 
 custom:
   customDomain:
     domainName: api.zadif.com
-    basePath: gateway
+    basePath: users
     stage: dev
