@@ -19,12 +19,16 @@ functions:
       - http:
           path: /
           method: post
-          cors: true
+          cors:
+            origins:
+              - https://api.zadif.com
 
       - http:
           path: /
           method: get
-          cors: true
+          cors:
+            origins:
+              - https://api.zadif.com
 
 custom:
   customDomain:
