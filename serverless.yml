@@ -33,5 +33,5 @@ functions:
 custom:
   customDomain:
     domainName: api.zadif.com
-    basePath: users
+    basePath: gateway
     stage: dev
