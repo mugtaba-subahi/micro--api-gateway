@@ -11,10 +11,10 @@ const createHandler = async () => {
   });
 
   const server = new ApolloServer({
-    tracing: true,
-    playground: { endpoint: '/gateway' },
-    subscriptions: false,
     gateway,
+    subscriptions: false,
+    introspection: true,
+    playground: { endpoint: '/gateway' },
   });
   return server.createHandler();
 };
