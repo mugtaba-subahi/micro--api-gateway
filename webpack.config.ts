@@ -1,4 +1,6 @@
+import slsw from 'serverless-webpack';
+
 module.exports = {
-  entry: './lambda.js',
+  entry: slsw.lib.entries,
   optimization: { minimize: true },
 };
