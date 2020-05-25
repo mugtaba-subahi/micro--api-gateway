@@ -11,6 +11,7 @@ const createHandler = async () => {
   });
 
   const server = new ApolloServer({
+    tracing: true,
     playground: { endpoint: '/gateway' },
     subscriptions: false,
     gateway,
