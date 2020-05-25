@@ -3,3 +3,4 @@ node_modules
 .serverless
 **/*.js
 **/*.map
+!webpack.config.js
