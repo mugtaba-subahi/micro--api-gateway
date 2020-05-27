@@ -4,7 +4,6 @@ provider:
   name: aws
   runtime: nodejs12.x
   region: eu-west-1
-  stage: dev
   versionFunctions: false
   deploymentBucket: zadif-sls-deployments
 

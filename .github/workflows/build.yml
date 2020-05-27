@@ -23,7 +23,7 @@ jobs:
         run: tsc
 
       - name: Deploy
-        run: serverless deploy
+        run: serverless deploy --stage $NODE_ENV
         env:
           NODE_ENV: production
           AWS_ACCESS_KEY_ID: ${{ secrets.DEPLOYER_AWS_ACCESS_KEY_ID }}
