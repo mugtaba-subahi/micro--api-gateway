@@ -11,6 +11,10 @@ plugins:
   - serverless-webpack
   - serverless-offline
 
+custom:
+  serverless-offline:
+    host: 0.0.0.0
+
 functions:
   graphql:
     handler: lambda.graphql

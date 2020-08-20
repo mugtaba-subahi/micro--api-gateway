@@ -5,16 +5,16 @@ import { ApolloGateway } from '@apollo/gateway';
 const createHandler = async () => {
   const gateway = new ApolloGateway({
     serviceList: [
-      { name: 'users', url: 'https://api.zadif.com/users' },
-      { name: 'posts', url: 'https://api.zadif.com/posts' },
-    ],
-  });
+      { "name": "users", "url": "https://api.zadif.com/users" },
+      { "name": "posts", "url": "https://api.zadif.com/posts" }
+    ]
+ });
 
   const server = new ApolloServer({
     gateway,
     subscriptions: false,
     introspection: true,
-    playground: { endpoint: '/gateway' },
+    playground: { endpoint: '/gateway' }
   });
   return server.createHandler();
 };
